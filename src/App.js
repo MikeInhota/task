@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Task from './components/form/Task';
 import './App.css';
+import Form from './components/form/Form';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor(){
+
+  super()
+  this.state = {
+    tasks: [
+      {title: "estudar", description: "Java"},
+      {title: "exercício", description: "Abs"}
+    ]
+  }
+  
+  
+  
+}
+
+addTask(task){
+  this.setState({ tasks : [...this.state.tasks, task] })
+}
+
+  render(){
+    return (
+      <>
+      <section>
+        <Form addTask={this.addTask.bind(this)}/>
+      </section>
+      <section>
+        {this.state.tasks.map((task) => (
+          <Task 
+            key={task.title}
+            title={task.title}
+            description={task.description} 
+          />
+        ) )}
+      </section>
+      </>
+    );
+  }
 }
 
 export default App;
