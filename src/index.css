@@ -1,13 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+:root{
+  --color-destak-1: #ffa000;
+  --color-destak-2: #FFC107;
+  --color-destak-3: #FFECB3;
+  --color-destak-dark: #795548;
+  --color-scale-1: #212121;
+  --color-scale-2: #757575;
+  --color-scale-3: #BDBDBD;
+}
+
+a{
+  color: var(--color-destak-dark);
+  text-decoration: none;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Sahitya", serif;
+  font-style: normal;
+  font-weight: normal;
+  position: relative;
+  background: var(--color-scale-1);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  color: var(--color-destak-1);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+  font-size: 64px;
 }

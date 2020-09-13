@@ -1,0 +1,62 @@
+.card-task {
+  background: var(--color-destak-3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 0px 15px 10px;
+  margin: 5px;
+  min-height: 10rem;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-task h3 {
+  color: var(--color-destak-1);
+  font-weight: bold;
+  text-shadow: 2px 0 0 var(--color-destak-dark),
+    -2px 0 0 var(--color-destak-dark), 0 2px 0 var(--color-destak-dark),
+    0 -2px 0 var(--color-destak-dark), 1px 1px var(--color-destak-dark),
+    -1px -1px 0 var(--color-destak-dark), 1px -1px 0 var(--color-destak-dark),
+    -1px 1px 0 var(--color-destak-dark), 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.card-task h3, p{
+  margin: 1px 0px 0px 0px;
+}
+
+.card-task button{
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+.status {
+  height: 3px;
+  background-color: var(--color-scale-3);
+  border-radius: 20px;
+  margin: 3px;
+}
+
+.status span {
+  height: 100%;
+  display: block;
+  background: var(--color-destak-2);
+  box-shadow: 0px 0px 2px var(--color-destak-2),
+    0px 0px 6px var(--color-destak-2),
+    -2px 0px 1px 0px var(--color-destak-1) inset;
+  border-radius: 20px;
+}
+
+.buttonHolder, .barr{
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+  .card-task {
+    max-width: 17rem;
+  }
+}

@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form h1{
+  text-align: center;
+  margin: auto;
+  text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.50);
+}
+
+.form input[type="text"],
+textarea{
+  outline: none;
+  font-size: 1.2rem;
+  padding: 0.5em;
+  color: var(--color-scale-1);
+  margin: 1rem;
+  background: var(--color-destak-3);
+  border: 3px solid var(--color-destak-2);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.form textarea {
+  resize: vertical;
+  max-height: 10rem;
+}
+
+.form button {
+  width: 10rem;
+  background: var(--color-destak-2);
+  border: 2px solid var(--color-destak-dark);
+  box-sizing: border-box;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: var(--color-scale-1);
+  font-weight: bold;
+  cursor: pointer;
+  margin: 1rem;
+  align-self: flex-end;
+}
