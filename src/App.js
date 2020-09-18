@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Task from './components/task/Task';
+import Task from './components/task/TaskFunc';
 import './App.css';
-import Form from './components/form/Form';
+import Form from './components/form/FormFunc';
 import Projects from './components/projects/projects';
 
 class App extends Component {
@@ -19,29 +19,34 @@ class App extends Component {
     }
   }
 
-  addTask(task) { this.setState({ tasks: [...this.state.tasks, task] }) }
+  addTask(task) { 
+    console.log(task);
+    this.setState({ tasks: [...this.state.tasks, task] }) }
   addProject(project) { this.setState({ projects: [...this.state.projects, project] }) }
 
-  deleteTask(index) {
+  deleteTask(id) {
     let newTasks = this.state.tasks;
+    const index = newTasks.findIndex(task => task.id === id)
     newTasks.splice(index, 1);
     this.setState({ tasks: newTasks });
   }
 
-  increment(index) {
-    let task = this.state.tasks[index];
+  increment(id) {
+    let newTasks = this.state.tasks;
+    const index = newTasks.findIndex(task => task.id === id)
+    let task = newTasks[index];
     task.status += 10;
     if (task.status > 100) task.status = 100;
-    let newTasks = this.state.tasks;
     newTasks.splice(index, 1, task);
     this.setState({ tasks: newTasks });
   }
 
-  decrement(index) {
-    let task = this.state.tasks[index];
+  decrement(id) {
+    let newTasks = this.state.tasks;
+    const index = newTasks.findIndex(task => task.id === id)
+    let task = newTasks[index];
     task.status -= 10;
     if (task.status < 0) task.status = 0;
-    let newTasks = this.state.tasks;
     newTasks.splice(index, 1, task);
     this.setState({ tasks: newTasks });
   }
@@ -66,11 +71,11 @@ class App extends Component {
         </section>
         <section className="tasks">
           {this.state.tasks
-          .filter(task => task.project === this.state.filter)
-          .map((task, index) => (
+          .filter(task => 
+            task.project === this.state.filter || this.state.filter==='')
+          .map((task) => (
             <Task
-              key={index}
-              index={index}
+              key={task.id}
               task={task}
               deleteTask={this.deleteTask.bind(this)}
               increment={this.increment.bind(this)}

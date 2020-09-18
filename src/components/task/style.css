@@ -21,11 +21,12 @@
     -1px 1px 0 var(--color-destak-dark), 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
-.card-task h3, p{
+.card-task h3,
+p {
   margin: 1px 0px 0px 0px;
 }
 
-.card-task button{
+.card-task button {
   background-color: transparent;
   border: transparent;
   cursor: pointer;
@@ -48,11 +49,17 @@
   border-radius: 20px;
 }
 
-.buttonHolder, .barr{
+.buttonHolder,
+.barr {
   margin: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.name-identifier {
+  font-size: smaller;
+  color: var(--color-scale-3);
 }
 
 @media (max-width: 1200px) {
